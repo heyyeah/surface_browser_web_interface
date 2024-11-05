@@ -1,0 +1,130 @@
+<?php
+require_once 'config.php';
+require_once 'db_functions.php';
+require_once 'link_functions.php';
+
+set_headers();
+
+// Constants
+const HTTP = "http://";
+const HTTPS = "https://";
+$message = "";
+
+function is_url($url_input) {
+    $goodLink = false;
+    
+    if (strlen($url_input) > strlen(HTTP)) {
+        $ip = "";
+        if (preg_match("/^(https?:\/\/)?([^\/]+)/i", $url_input, $matches)) {
+            $host = $matches[2];
+            $ip = gethostbyname($host);
+            if ($ip === $host) {
+                $ip = "";
+            }
+        }
+        
+        if (strlen($ip) > 0) {
+            $ch = curl_init($url_input);
+            curl_setopt($ch, CURLOPT_NOBODY, true);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_exec($ch);
+            $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            if ($responseCode == 200) {
+                $goodLink = true;
+            }
+            curl_close($ch);
+        }
+    }
+    return $goodLink;
+}
+
+try {
+    $db = connectToDatabase();
+
+    // Handle form submission
+    if (isset($_POST['submit'])) {
+        $address = $_POST['addressbar'] ?? '';
+        $type = $_POST['type'] ?? '';
+        
+        $error = "";
+        if ($type == "url") {
+            $insertType = 0;
+            if (strncasecmp($address, HTTP, 7) != 0 && strncasecmp($address, HTTPS, 8) != 0) {
+                $address = HTTPS . $address;
+            }
+            if (!is_url($address)) {
+                $error = $address;
+                $address = "";
+            }
+        } elseif ($type == "img") {
+            $insertType = 1;
+            if (strpos($address, ".") || strpos($address, "www")) {
+                if (is_url($address)) {
+                    $insertType = 0;
+                    if (strncasecmp($address, HTTP, 7) != 0 && strncasecmp($address, HTTPS, 8) != 0) {
+                        $address = HTTPS . $address;
+                    }
+                }
+            }
+        }
+
+        if (strlen($address) > 0) {
+            $stmt = $db->prepare("SELECT id FROM " . SB_DATA_TABLE . " WHERE (`type` < " . TYPE_ACCESSED . ") AND address = :address");
+            $stmt->execute(['address' => $address]);
+            if ($stmt->rowCount() > 0) {
+                // echo "Link \"" . htmlspecialchars($address) . "\" is already in queue.";
+                $message = "Link \"" . htmlspecialchars($address) . "\" is already in queue.";
+            } else {
+                $stmt = $db->prepare("SELECT COUNT(*) FROM " . SB_DATA_TABLE);
+                $stmt->execute();
+                $count = $stmt->fetchColumn();
+                if ($count < SB_MAXROWS) {
+                    $stmt = $db->prepare("INSERT INTO " . SB_DATA_TABLE . " (type, accessed, modified, address) VALUES (:type, NOW(), NOW(), :address)");
+                    $stmt->execute(['type' => $insertType, 'address' => $address]);
+                } else {
+                    $stmt = $db->prepare("SELECT id, modified FROM " . SB_DATA_TABLE . " WHERE id > :num_default_links ORDER BY modified ASC LIMIT 1");
+                    $stmt->execute(['num_default_links' => SB_NUM_DEFAULT_LINKS]);
+                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $id = $row['id'];
+                    $stmt = $db->prepare("UPDATE " . SB_DATA_TABLE . " SET type = :type, accessed = NOW(), modified = NOW(), address = :address WHERE id = :id");
+                    $stmt->execute(['type' => $insertType, 'address' => $address, 'id' => $id]);
+                }
+            }
+        } else {
+            // echo "No link found " . htmlspecialchars($error);
+            $message = "No link found " . htmlspecialchars($error);
+        }
+    }
+} catch (PDOException $e) {
+    error_log("Database error: " . $e->getMessage());
+    $message = "An error occurred while processing your request. Please try again later.";
+} catch (Exception $e) {
+    error_log("General error: " . $e->getMessage());
+    $message = "An error occurred while processing your request. Please try again later.";
+}
+
+$out_links = getOutgoingLinks($db, SB_DATA_TABLE);
+$in_links = getIncomingLinks($db, SB_DATA_TABLE);
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue: Surface Browser</title>
+    <meta http-equiv="refresh" content="400">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <?php if ($message) { echo $message; } ?>
+    <table border="0">
+        <tr><th colspan="2">Current seeds</td></tr>
+        <?php echo $out_links ?>
+        <tr><th colspan="2">Newest Incoming seeds</td></tr>
+        <?php echo $in_links ?>
+        <tr><td colspan="2"><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" target="_self">Refresh page</a></td></tr>
+    </table>
+</body>
+</html>
