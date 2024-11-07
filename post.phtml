@@ -11,28 +11,50 @@ const HTTPS = "https://";
 $message = "";
 
 function is_url($url_input) {
+    error_log("URL Validation - Input: " . $url_input);
+    
+    // Add https:// if no protocol specified
+    if (!preg_match("~^(?:f|ht)tps?://~i", $url_input)) {
+        $url_input = HTTPS . $url_input;
+        error_log("URL Validation - Added protocol: " . $url_input);
+    }
+    
     $goodLink = false;
     
     if (strlen($url_input) > strlen(HTTP)) {
         $ip = "";
         if (preg_match("/^(https?:\/\/)?([^\/]+)/i", $url_input, $matches)) {
             $host = $matches[2];
+            error_log("URL Validation - Extracted host: " . $host);
             $ip = gethostbyname($host);
+            error_log("URL Validation - Resolved IP: " . $ip);
             if ($ip === $host) {
+                error_log("URL Validation - DNS resolution failed");
                 $ip = "";
             }
         }
         
         if (strlen($ip) > 0) {
             $ch = curl_init($url_input);
-            curl_setopt($ch, CURLOPT_NOBODY, true);
+            // Set CURL options to better mimic a browser
+            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36');
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_NOBODY, true);
+            
             curl_exec($ch);
             $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            if ($responseCode == 200) {
+            error_log("URL Validation - Response Code: " . $responseCode);
+            
+            // Accept common response codes that indicate the site exists
+            // 200: OK, 301/302: Redirect, 403: Forbidden (but exists), 401: Unauthorized (but exists)
+            if ($responseCode >= 200 && $responseCode < 404) {
                 $goodLink = true;
+                error_log("URL Validation - URL is valid (Response: $responseCode)");
             }
+            
             curl_close($ch);
         }
     }
