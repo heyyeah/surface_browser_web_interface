@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <title>Surface Browser</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <script language="JavaScript">
+    
+  </script>
+  <style type="text/css">
+    <!--
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px
+    }
+    -->
+  </style>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+
+  <p><img src="images/SurfaceBrowser_wi1.jpg" width="312" height="194" align="left" border="1" hspace="4">
+    <font size="+2"><b>Surface Browser</b></font><br>
+    Queue Form
+  </p>
+
+  <p>Queue up a seed web link (any internet address with images) or a seed search word. Surface
+    Browser will use these seeds as starting points to traverse the internet.</p>
+
+  <form action="post.phtml" method="post" target="sb_links" name="form_surfacebrowser">
+    Web link <img src="images/sb_url_f.gif" width="16" height="16">
+    <input type="radio" name="type" value="url" checked
+      onClick="document.form_surfacebrowser.submit.value='Queue Link'">
+    &nbsp;&nbsp;Search word(s) <img src="images/sb_img_f.gif" width="16" height="16">
+    <input type="radio" name="type" value="img" onClick="document.form_surfacebrowser.submit.value='Queue Search'">
+    <input type="text" name="addressbar" size="30">
+    <input type="submit" name="submit" value="Queue Link">
+  </form>
+  Refer to <a href="surfacebrowser_instruction.html" target="sb_content">joystick instructions</a>,
+  <a href="surfacebrowser_info.html" target="sb_content">background</a> and <a href="surfacebrowser_cat.html"
+    target="sb_content">catalogue essay</a> (from NESTA, UK)
+  for more information.
+</body>
+
+</html>

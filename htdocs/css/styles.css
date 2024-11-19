@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: #FFFFFF;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1.2px;
+}
+
+th {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: left;
+}
+
+td.icon {
+    padding-top: 0;
+}
+
+.out_links.current {
+    background-color: #CCCCFF;
+}

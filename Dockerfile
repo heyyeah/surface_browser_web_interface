@@ -29,7 +29,8 @@ RUN { \
 RUN a2enconf phtml
 
 # Copy Apache configuration
-COPY apache.conf /etc/apache2/sites-available/000-default.conf
+COPY ./config/apache.conf /etc/apache2/sites-available/000-default.conf
+COPY ./htdocs /var/www/html
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
