@@ -1,7 +1,7 @@
 <?php
 
-const TYPE_ACCESSED = 3;
-// TODO consider increment to allow for AI type 
+const TYPE_ACCESSED = 4;
+const TYPE_AI = 3;
 // TODO understand if type 2 is used
 const TYPE_IMAGE = 1;
 const TYPE_URL = 0;
@@ -95,11 +95,17 @@ function getIncomingLinks($db, $data_table)
 
 function link_row($type, $link, $isOutLink, $isCurrent)
 {
-    $isURL = ($type == TYPE_URL);
-    $iconImg = $isURL ? "images/sb_url.gif" : "images/sb_img.gif";
+    if ($type == TYPE_AI) {
+        $iconHtml = "<span class=\"bw-emoji\">✨</span>";
+    } else {
+        $iconImg = ($type == TYPE_URL) ? "images/sb_url.gif" : "images/sb_img.gif";
+        $iconHtml = "<img src=\"{$iconImg}\" width=\"12\" height=\"13\" align=\"middle\" vspace=2>";
+    }
+    
     $class = $isOutLink ? 'out_links' : 'in_links';
     $class .= $isCurrent ? ' current' : '';
-    return "<tr class=\"{$class}\"><td class=\"icon\"><img src=\"{$iconImg}\" width=\"12\" height=\"13\" align=\"middle\" vspace=2></td>" .
+    
+    return "<tr class=\"{$class}\"><td class=\"icon\">{$iconHtml}</td>" .
         "<td>" . htmlspecialchars($link) . "</td></tr>\n";
 }
 
@@ -151,10 +157,18 @@ function getNextLink($db, $data_table)
             $updateStmt->bindParam(':id', $id, PDO::PARAM_INT);
             $updateStmt->execute();
 
-            $isURL = ($type == 0);
-            $url = $isURL ? $address : "http://images.google.com/images?q=" . urlencode($address);
+            switch($type) {
+                case TYPE_URL:
+                    $url = $address;
+                    break;
+                case TYPE_AI:
+                    $url = $address;
+                    break;
+                default:
+                    $url = "https://duckduckgo.com/?t=h_&iax=images&ia=images&kp=1&q=" . urlencode($address);
+            }
 
-            return ['url' => $url, 'isURL' => $isURL];
+            return ['url' => $url, 'isURL' => ($type == TYPE_URL)];
         }
 
         return null;

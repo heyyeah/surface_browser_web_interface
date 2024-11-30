@@ -72,7 +72,7 @@ try {
 
         $error = "";
         if ($type == "url") {
-            $insertType = 0;
+            $insertType = TYPE_URL;
             if (strncasecmp($address, HTTP, 7) != 0 && strncasecmp($address, HTTPS, 8) != 0) {
                 $address = HTTPS . $address;
             }
@@ -81,15 +81,18 @@ try {
                 $address = "";
             }
         } elseif ($type == "img") {
-            $insertType = 1;
+            $insertType = TYPE_IMAGE;
             if (strpos($address, ".") || strpos($address, "www")) {
                 if (is_url($address)) {
-                    $insertType = 0;
+                    $insertType = TYPE_URL;
                     if (strncasecmp($address, HTTP, 7) != 0 && strncasecmp($address, HTTPS, 8) != 0) {
                         $address = HTTPS . $address;
                     }
                 }
             }
+        } elseif ($type == "ai" && SB_ENABLE_AI_SEEDS) {
+            $insertType = TYPE_AI;
+            // No additional validation needed for AI prompts
         }
 
         if (strlen($address) > 0) {
