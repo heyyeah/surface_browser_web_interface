@@ -95,17 +95,21 @@ function getIncomingLinks($db, $data_table)
 
 function link_row($type, $link, $isOutLink, $isCurrent)
 {
-    if ($type == TYPE_AI) {
-        $iconHtml = "<span class=\"bw-emoji\">✨</span>";
-    } else {
-        $iconImg = ($type == TYPE_URL) ? "images/sb_url.gif" : "images/sb_img.gif";
-        $iconHtml = "<img src=\"{$iconImg}\" width=\"12\" height=\"13\" align=\"middle\" vspace=2>";
+    switch($type) {
+        case TYPE_URL:
+            $iconImg = "sb_url.gif";
+            break;
+        case TYPE_AI:
+            $iconImg = "sb_ai.png";
+            break;
+        default:
+            $iconImg = "sb_img.gif";
     }
     
     $class = $isOutLink ? 'out_links' : 'in_links';
     $class .= $isCurrent ? ' current' : '';
     
-    return "<tr class=\"{$class}\"><td class=\"icon\">{$iconHtml}</td>" .
+    return "<tr class=\"{$class}\"><td class=\"icon\"><img src=\"images/{$iconImg}\" width=\"12\" height=\"13\" align=\"middle\" vspace=2></td>" .
         "<td>" . htmlspecialchars($link) . "</td></tr>\n";
 }
 
@@ -128,21 +132,26 @@ function getNextLink($db, $data_table)
     try {
         // First, try to get an unaccessed active seed
         $sql = "SELECT id, type, address FROM " . $data_table . " 
-                WHERE (accessed = modified) AND (`type` < " . TYPE_ACCESSED . ") 
+                WHERE (`type` < " . TYPE_ACCESSED . ") AND accessed = modified 
                 ORDER BY accessed ASC LIMIT 1";
+                
         $stmt = $db->prepare($sql);
         $stmt->execute();
-
-        if ($stmt->rowCount() == 0) {
-            // If no unaccessed seeds, get the oldest accessed active seed
+        
+        $rowCount = $stmt->rowCount();
+        
+        if ($rowCount == 0) {
+            // If no unaccessed seeds, get any active link including default links
             $sql = "SELECT id, type, address FROM " . $data_table . " 
-                    WHERE (`type` < " . TYPE_ACCESSED . ") ORDER BY accessed ASC LIMIT 1";
+                    WHERE (`type` < " . TYPE_ACCESSED . ") 
+                    ORDER BY accessed ASC LIMIT 1";
             $stmt = $db->prepare($sql);
             $stmt->execute();
         }
-
-        if ($stmt->rowCount() > 0) {
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if ($row) {
             $id = $row['id'];
             $type = $row['type'];
             $address = $row['address'];
@@ -152,28 +161,36 @@ function getNextLink($db, $data_table)
             if ($id > SB_NUM_DEFAULT_LINKS) {
                 $updateSql .= ", `type` = " . TYPE_ACCESSED . " ";
             }
-            $updateSql .= "WHERE id = :id";
+            $updateSql .= "WHERE id = :id";            
             $updateStmt = $db->prepare($updateSql);
             $updateStmt->bindParam(':id', $id, PDO::PARAM_INT);
-            $updateStmt->execute();
+            $updateResult = $updateStmt->execute();
 
             switch($type) {
                 case TYPE_URL:
                     $url = $address;
                     break;
                 case TYPE_AI:
-                    $url = $address;
+                    // WIP: pass a stub address for AI links
+                    $url = "side.html?type=genai&q=" . urlencode($address);
                     break;
                 default:
                     $url = "https://duckduckgo.com/?t=h_&iax=images&ia=images&kp=1&q=" . urlencode($address);
             }
-
-            return ['url' => $url, 'isURL' => ($type == TYPE_URL)];
+            
+            $response = ['url' => $url, 'type' => $type];
+            return $response;
         }
-
+        error_log("getNextLink: No valid row found, returning null");
         return null;
+        
     } catch (PDOException $e) {
-        error_log("Database error in getNextLink: " . $e->getMessage());
+        error_log("getNextLink: Database error: " . $e->getMessage());
+        error_log("getNextLink: Stack trace: " . $e->getTraceAsString());
+        return null;
+    } catch (Exception $e) {
+        error_log("getNextLink: General error: " . $e->getMessage());
+        error_log("getNextLink: Stack trace: " . $e->getTraceAsString());
         return null;
     }
 }

@@ -15,9 +15,21 @@ $link_test = filter_input(INPUT_GET, 't', FILTER_SANITIZE_NUMBER_INT);
     <?php
     if ($link_test != 1) {
         $link = getNextLink($db, SB_DATA_TABLE);
+        // log link
+        error_log("Link: " . json_encode($link));
         if ($link) {
-            echo "<a href=\"" . htmlspecialchars($link['url']) . "\"><img src=\"" .
-                ($link['isURL'] ? "images/sb_url.gif" : "images/sb_img.gif") . "\" alt=\"Link icon\"></a>";
+            switch($link['type']) {
+                case TYPE_URL:
+                    $iconImg = "images/sb_url.gif";
+                    break;
+                case TYPE_AI:
+                    $iconImg = "images/sb_ai.png";
+                    break;
+                default:
+                    $iconImg = "images/sb_img.gif";
+            }
+            echo "<a href=\"" . htmlspecialchars($link['url']) . "\"><img src=\"" . 
+                $iconImg . "\" alt=\"Link icon\"></a>";
         } else {
             echo "No links available.";
         }
