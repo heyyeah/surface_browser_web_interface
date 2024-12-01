@@ -96,10 +96,13 @@ try {
         }
 
         if (strlen($address) > 0) {
-            $stmt = $db->prepare("SELECT id FROM " . SB_DATA_TABLE . " WHERE (`type` < " . TYPE_ACCESSED . ") AND address = :address");
-            $stmt->execute(['address' => $address]);
+            $stmt = $db->prepare("SELECT id FROM " . SB_DATA_TABLE . " WHERE (`type` < " . TYPE_ACCESSED . ") AND `type` = :type AND address = :address");
+            // log query
+            error_log("Query: " . $stmt->queryString);
+            $stmt->execute(['type' => $insertType, 'address' => $address]);
+            // log result
+            error_log("Result: " . $stmt->rowCount());
             if ($stmt->rowCount() > 0) {
-                // echo "Link \"" . htmlspecialchars($address) . "\" is already in queue.";
                 $message = "Link \"" . htmlspecialchars($address) . "\" is already in queue.";
             } else {
                 $stmt = $db->prepare("SELECT COUNT(*) FROM " . SB_DATA_TABLE);
