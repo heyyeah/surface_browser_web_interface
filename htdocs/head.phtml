@@ -15,7 +15,10 @@ require_once 'init.php';
     .side-image {
         margin: 0 6px 0 4px;
         padding: 0;
-    }    
+    }
+    label {
+      cursor: pointer;
+    }
   </style>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -31,16 +34,24 @@ require_once 'init.php';
   <p><?php echo t('queue_description'); ?></p>
 
   <form action="post.phtml" method="post" target="sb_links" name="form_surfacebrowser">
-    <input type="radio" name="type" value="url" checked
-      onClick="document.form_surfacebrowser.submit.value='Queue Link'">
-    <img src="images/sb_url_f.gif" width="16" height="16"> <?php echo t('web_link'); ?>
+    <label>
+      <input type="radio" name="type" value="url" checked
+        onClick="document.form_surfacebrowser.submit.value='Queue Link'">
+      <img src="images/sb_url_f.gif" width="16" height="16"> <?php echo t('web_link'); ?>
+    </label>
     &nbsp;&nbsp;
-    <input type="radio" name="type" value="img" onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_search'); ?>'">
-    <img src="images/sb_img_f.gif" width="16" height="16"> <?php echo t('search_words'); ?>
+    <label>
+      <input type="radio" name="type" value="img" 
+        onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_search'); ?>'">
+      <img src="images/sb_img_f.gif" width="16" height="16"> <?php echo t('search_words'); ?>
+    </label>
     <?php if (SB_ENABLE_AI_SEEDS): ?>
     &nbsp;&nbsp;
-    <input type="radio" name="type" value="ai" onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_ai_prompt'); ?>'">
-    <img src="images/sb_ai_f.png" width="16" height="16"> <?php echo t('ai_prompt'); ?>
+    <label>
+      <input type="radio" name="type" value="ai" 
+        onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_ai_prompt'); ?>'">
+      <img src="images/sb_ai_f.png" width="16" height="16"> <?php echo t('ai_prompt'); ?>
+    </label>
     <?php endif; ?>
     <input type="text" name="addressbar" size="30">
     <input type="submit" name="submit" value="<?php echo t('queue_link'); ?>">
