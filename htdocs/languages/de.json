@@ -1,8 +1,8 @@
 {
     "title": "Surface Browser",
     "page_title": "Surface Browser :: Tim Plaisted",
-    "queue_form": "Warteschlangen-Formular",
-    "queue_description": "Fügen Sie einen Seed-Weblink (beliebige Internetadresse mit Bildern) oder ein Suchwort hinzu. Surface Browser wird diese Seeds als Ausgangspunkte für die Durchquerung des Internets nutzen.",
+    "queue_form": "Eingabeformular",
+    "queue_description": "Fügen Sie einen Seed-Weblink (beliebige Internetadresse mit Bildern) oder ein Suchwort hinzu. Surface Browser wird diese Seeds als Ausgangspunkte für die Erkundung des Internets nutzen.",
     "web_link": "Weblink",
     "search_words": "Suchwort(e)",
     "ai_prompt": "KI-Prompt",

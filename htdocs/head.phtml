@@ -36,7 +36,7 @@ require_once 'init.php';
   <form action="post.phtml" method="post" target="sb_links" name="form_surfacebrowser">
     <label>
       <input type="radio" name="type" value="url" checked
-        onClick="document.form_surfacebrowser.submit.value='Queue Link'">
+        onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_link'); ?>'">
       <img src="images/sb_url_f.gif" width="16" height="16"> <?php echo t('web_link'); ?>
     </label>
     &nbsp;&nbsp;

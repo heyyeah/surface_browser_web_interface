@@ -1,7 +1,7 @@
 {
     "title": "Surface Browser",
     "page_title": "Surface Browser :: Tim Plaisted",
-    "queue_form": "Formulaire de File d'Attente",
+    "queue_form": "Formulaire de Navigation",
     "queue_description": "Ajoutez un lien web source (toute adresse internet avec des images) ou un mot de recherche. Surface Browser utilisera ces sources comme points de départ pour parcourir internet.",
     "web_link": "Lien web",
     "search_words": "Mot(s) de recherche",
@@ -35,7 +35,7 @@
     "sphere_title": "Sphère",
     "sphere_instructions": [
         "joystick: rotation de la sphère",
-        "bouton de tir: sélectionner le lien (les images avec liens apparaissent surlignées avec le tunnel)",
+        "bouton de tir: sélectionner le lien (les images avec liens apparaissent surlignés avec le tunnel)",
         "boutons 1/2: zoom avant/arrière de la surface",
         "bouton latéral: arrêter la rotation"
     ],
