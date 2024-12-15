@@ -1,0 +1,35 @@
+<?php
+require_once 'config.php';
+require_once 'init.php';
+?>
+<html>
+<head>
+  <title><?php echo t('page_title'); ?></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <style type="text/css">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px
+    }
+  </style>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+  <img src="images/SurfaceBrowser_wi3.jpg" width="313" height="174" align="left" border="1" hspace="4">
+  <p><b><?php echo t('joystick_title'); ?></b></p>
+  <p><b><?php echo t('tunnel_title'); ?></b><br>
+    <?php echo t('tunnel_instructions'); ?><br>
+    <br>
+    <b><?php echo t('sphere_title'); ?></b><br>
+    <?php 
+    $sphere_instructions = t('sphere_instructions');
+    if (is_array($sphere_instructions)) {
+        echo implode("<br>\n    ", $sphere_instructions);
+    }
+    ?>
+  </p>
+  <br clear=all>
+  <p><?php echo t('installation_note'); ?></p>
+</body>
+</html> 

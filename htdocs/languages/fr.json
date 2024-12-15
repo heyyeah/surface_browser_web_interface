@@ -1,0 +1,47 @@
+{
+    "title": "Surface Browser",
+    "page_title": "Surface Browser :: Tim Plaisted",
+    "queue_form": "Formulaire de File d'Attente",
+    "queue_description": "Ajoutez un lien web source (toute adresse internet avec des images) ou un mot de recherche. Surface Browser utilisera ces sources comme points de départ pour parcourir internet.",
+    "web_link": "Lien web",
+    "search_words": "Mot(s) de recherche",
+    "ai_prompt": "Prompt IA",
+    "queue_link": "Ajouter le Lien",
+    "queue_search": "Ajouter la Recherche",
+    "queue_ai_prompt": "Ajouter le Prompt IA",
+    "refresh_page": "Actualiser la page",
+    "current_seeds": "Sources actuelles",
+    "newest_incoming_seeds": "Nouvelles sources entrantes",
+    "no_current_links": "Aucun lien actuel",
+    "no_incoming_links": "Aucun lien entrant",
+    "background_text": "Consultez les {joystick_link}instructions du joystick{/link}, le {info_link}contexte{/link} et l'{cat_link}essai du catalogue{/link} (de NESTA, UK) pour plus d'informations.",
+    "link_targets": {
+        "joystick_link": {
+            "href": "surfacebrowser_instruction.phtml",
+            "target": "sb_content"
+        },
+        "info_link": {
+            "href": "surfacebrowser_info.html",
+            "target": "sb_content"
+        },
+        "cat_link": {
+            "href": "surfacebrowser_cat.html",
+            "target": "sb_content"
+        }
+    },
+    "joystick_title": "Instructions du Joystick",
+    "tunnel_title": "Tunnel",
+    "tunnel_instructions": "joystick (avant/arrière): vitesse du tunnel",
+    "sphere_title": "Sphère",
+    "sphere_instructions": [
+        "joystick: rotation de la sphère",
+        "bouton de tir: sélectionner le lien (les images avec liens apparaissent surlignées avec le tunnel)",
+        "boutons 1/2: zoom avant/arrière de la surface",
+        "bouton latéral: arrêter la rotation"
+    ],
+    "installation_note": "L'œuvre peut être installée sur les ordinateurs personnels depuis www.boxc.net",
+    "current_seeds_header": "Sources actuelles",
+    "newest_seeds_header": "Nouvelles sources entrantes",
+    "refresh_link": "Actualiser la page",
+    "db_error": "Une erreur s'est produite lors de la récupération des liens. Veuillez réessayer plus tard."
+}

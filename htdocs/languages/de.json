@@ -1,0 +1,47 @@
+{
+    "title": "Surface Browser",
+    "page_title": "Surface Browser :: Tim Plaisted",
+    "queue_form": "Warteschlangen-Formular",
+    "queue_description": "Fügen Sie einen Seed-Weblink (beliebige Internetadresse mit Bildern) oder ein Suchwort hinzu. Surface Browser wird diese Seeds als Ausgangspunkte für die Durchquerung des Internets nutzen.",
+    "web_link": "Weblink",
+    "search_words": "Suchwort(e)",
+    "ai_prompt": "KI-Prompt",
+    "queue_link": "Link Hinzufügen",
+    "queue_search": "Suche Starten",
+    "queue_ai_prompt": "KI-Prompt Hinzufügen",
+    "refresh_page": "Seite Aktualisieren",
+    "current_seeds": "Aktuelle Seeds",
+    "newest_incoming_seeds": "Neueste eingehende Seeds",
+    "no_current_links": "Keine aktuellen Links",
+    "no_incoming_links": "Keine eingehenden Links",
+    "background_text": "Siehe {joystick_link}Joystick-Anleitung{/link}, {info_link}Hintergrund{/link} und {cat_link}Katalog-Essay{/link} (von NESTA, UK) für weitere Informationen.",
+    "link_targets": {
+        "joystick_link": {
+            "href": "surfacebrowser_instruction.phtml",
+            "target": "sb_content"
+        },
+        "info_link": {
+            "href": "surfacebrowser_info.html",
+            "target": "sb_content"
+        },
+        "cat_link": {
+            "href": "surfacebrowser_cat.html",
+            "target": "sb_content"
+        }
+    },
+    "joystick_title": "Joystick-Anleitung",
+    "tunnel_title": "Tunnel",
+    "tunnel_instructions": "Joystick (vor/zurück): Tunnelgeschwindigkeit",
+    "sphere_title": "Kugel",
+    "sphere_instructions": [
+        "Joystick: Kugel drehen",
+        "Feuerknopf: Link auswählen (Bilder mit Links werden mit Tunnel hervorgehoben)",
+        "Tasten 1/2: Zur Oberfläche hin/weg zoomen",
+        "Seitentaste: Rotation stoppen"
+    ],
+    "installation_note": "Das Werk kann auf privaten Computern von www.boxc.net installiert werden",
+    "current_seeds_header": "Aktuelle Seeds",
+    "newest_seeds_header": "Neueste eingehende Seeds",
+    "refresh_link": "Seite aktualisieren",
+    "db_error": "Beim Abrufen der Links ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+}

@@ -1,0 +1,47 @@
+{
+    "title": "Surface Browser", 
+    "page_title": "Surface Browser :: Tim Plaisted",
+    "queue_form": "Queue Form",
+    "queue_description": "Queue up a seed web link (any internet address with images) or a seed search word. Surface Browser will use these seeds as starting points to traverse the internet.",
+    "web_link": "Web link",
+    "search_words": "Search word(s)",
+    "ai_prompt": "AI Prompt",
+    "queue_link": "Queue Link",
+    "queue_search": "Queue Search",
+    "queue_ai_prompt": "Queue AI Prompt",
+    "refresh_page": "Refresh page",
+    "current_seeds": "Current seeds",
+    "newest_incoming_seeds": "Newest Incoming seeds",
+    "no_current_links": "No current links",
+    "no_incoming_links": "No incoming links",
+    "background_text": "Refer to {joystick_link}joystick instructions{/link}, {info_link}background{/link} and {cat_link}catalogue essay{/link} (from NESTA, UK) for more information.",
+    "link_targets": {
+      "joystick_link": {
+        "href": "surfacebrowser_instruction.phtml",
+        "target": "sb_content"
+      },
+      "info_link": {
+        "href": "surfacebrowser_info.html",
+        "target": "sb_content"
+      },
+      "cat_link": {
+        "href": "surfacebrowser_cat.html",
+        "target": "sb_content"
+      }
+    },
+    "joystick_title": "Joystick Instructions",
+    "tunnel_title": "Tunnel",
+    "tunnel_instructions": "joystick (forward/back): tunnel speed",
+    "sphere_title": "Sphere",
+    "sphere_instructions": [
+        "joystick: rotate sphere",
+        "fire: choose selected link (images with links appear highlighted with tunnel)",
+        "button 1/2: zoom up to/away from surface",
+        "side button: stop rotation"
+    ],
+    "installation_note": "The work can be installed on home computers from www.boxc.net",
+    "current_seeds_header": "Current seeds",
+    "newest_seeds_header": "Newest Incoming seeds",
+    "refresh_link": "Refresh page",
+    "db_error": "An error occurred while retrieving links. Please try again later."
+  }

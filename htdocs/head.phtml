@@ -1,9 +1,10 @@
 <?php
 require_once 'config.php';
+require_once 'init.php';
 ?>
 <html>
 <head>
-  <title>Surface Browser</title>
+  <title><?php echo t('page_title'); ?></title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <style type="text/css">
     body {
@@ -15,31 +16,29 @@ require_once 'config.php';
 </head>
 
 <body bgcolor="#FFFFFF">
+  <?php include 'language_switcher.php'; ?>
+  
   <p><img src="images/SurfaceBrowser_wi1.jpg" width="312" height="194" align="left" border="1" hspace="4">
-    <font size="+2"><b>Surface Browser</b></font><br>
-    Queue Form
+    <font size="+2"><b><?php echo t('title'); ?></b></font><br>
+    <?php echo t('queue_form'); ?>
   </p>
 
-  <p>Queue up a seed web link (any internet address with images) or a seed search word. Surface
-    Browser will use these seeds as starting points to traverse the internet.</p>
+  <p><?php echo t('queue_description'); ?></p>
 
   <form action="post.phtml" method="post" target="sb_links" name="form_surfacebrowser">
-    Web link <img src="images/sb_url_f.gif" width="16" height="16">
+    <?php echo t('web_link'); ?> <img src="images/sb_url_f.gif" width="16" height="16">
     <input type="radio" name="type" value="url" checked
       onClick="document.form_surfacebrowser.submit.value='Queue Link'">
-    &nbsp;&nbsp;Search word(s) <img src="images/sb_img_f.gif" width="16" height="16">
-    <input type="radio" name="type" value="img" onClick="document.form_surfacebrowser.submit.value='Queue Search'">
+    &nbsp;&nbsp;<?php echo t('search_words'); ?> <img src="images/sb_img_f.gif" width="16" height="16">
+    <input type="radio" name="type" value="img" onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_search'); ?>'">
     <?php if (SB_ENABLE_AI_SEEDS): ?>
-    &nbsp;&nbsp;AI Prompt <img src="images/sb_ai_f.png" width="16" height="16">
-    <input type="radio" name="type" value="ai" onClick="document.form_surfacebrowser.submit.value='Queue AI Prompt'">
+    &nbsp;&nbsp;<?php echo t('ai_prompt'); ?> <img src="images/sb_ai_f.png" width="16" height="16">
+    <input type="radio" name="type" value="ai" onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_ai_prompt'); ?>'">
     <?php endif; ?>
     <input type="text" name="addressbar" size="30">
-    <input type="submit" name="submit" value="Queue Link">
+    <input type="submit" name="submit" value="<?php echo t('queue_link'); ?>">
   </form>
   
-  Refer to <a href="surfacebrowser_instruction.html" target="sb_content">joystick instructions</a>,
-  <a href="surfacebrowser_info.html" target="sb_content">background</a> and <a href="surfacebrowser_cat.html"
-    target="sb_content">catalogue essay</a> (from NESTA, UK)
-  for more information.
+  <?php echo t_links('background_text'); ?>
 </body>
 </html>

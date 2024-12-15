@@ -1,4 +1,6 @@
 <?php
+require_once 'config.php';
+require_once 'init.php';
 
 const TYPE_ACCESSED = 4;
 const TYPE_AI = 3;
@@ -21,7 +23,7 @@ function getOutgoingLinks($db, $data_table)
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             $outLinks .= link_row($row['type'], $row['address'], true, true);
         } else {
-            $outLinks = message_row("No current links");
+            $outLinks = message_row('no_current_links');
         }
 
         // Part 2: Next links (oldest active accessed of accessed = modified, then oldest active accessed)
@@ -72,7 +74,7 @@ function getIncomingLinks($db, $data_table)
                 ORDER BY modified DESC LIMIT 3";
 
         $stmt = $db->prepare($sql);
-        $numDefaultLinks = SB_NUM_DEFAULT_LINKS; // Create a variable to hold the constant value
+        $numDefaultLinks = SB_NUM_DEFAULT_LINKS;
         $stmt->bindParam(':numDefaultLinks', $numDefaultLinks, PDO::PARAM_INT);
         $stmt->execute();
 
@@ -83,13 +85,13 @@ function getIncomingLinks($db, $data_table)
                 $inLinks .= link_row($row['type'], $row['address'], false, false);
             }
         } else {
-            $inLinks = message_row("No incoming links");
+            $inLinks = message_row('no_incoming_links');
         }
 
         return $inLinks;
     } catch (PDOException $e) {
         error_log("Database error in getIncomingLinks: " . $e->getMessage());
-        return message_row("An error occurred while retrieving incoming links.");
+        return message_row('db_error');
     }
 }
 
@@ -113,9 +115,9 @@ function link_row($type, $link, $isOutLink, $isCurrent)
         "<td>" . htmlspecialchars($link) . "</td></tr>\n";
 }
 
-function message_row($message)
+function message_row($message_key)
 {
-    return "<tr><td colspan=\"2\" class=\"message_row\">" . htmlspecialchars($message) . "</td></tr>\n";
+    return '<tr><td colspan="2">' . t($message_key) . '</td></tr>';
 }
 
 function set_headers()

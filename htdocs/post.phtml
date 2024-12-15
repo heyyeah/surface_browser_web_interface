@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'init.php';
 require_once 'db_functions.php';
 require_once 'link_functions.php';
 
@@ -138,12 +139,12 @@ $in_links = getIncomingLinks($db, SB_DATA_TABLE);
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $_SESSION['lang']; ?>">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queue: Surface Browser</title>
+    <title>Queue: <?php echo t('title'); ?></title>
     <meta http-equiv="refresh" content="400">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -154,15 +155,15 @@ $in_links = getIncomingLinks($db, SB_DATA_TABLE);
     } ?>
     <table border="0">
         <tr>
-            <th colspan="2">Current seeds</td>
+            <th colspan="2"><?php echo t('current_seeds_header'); ?></td>
         </tr>
         <?php echo $out_links ?>
         <tr>
-            <th colspan="2">Newest Incoming seeds</td>
+            <th colspan="2"><?php echo t('newest_seeds_header'); ?></td>
         </tr>
         <?php echo $in_links ?>
         <tr>
-            <td colspan="2"><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" target="_self">Refresh page</a></td>
+            <td colspan="2"><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" target="_self"><?php echo t('refresh_link'); ?></a></td>
         </tr>
     </table>
 </body>
