@@ -1,18 +1,18 @@
 {
     "title": "Surface Browser",
     "page_title": "Surface Browser :: Tim Plaisted",
-    "queue_description_with_ai":    "Ajoutez un lien web initial (toute adresse internet avec des images), mot(s) de recherche d'image ou un prompt IA pour générer des images. Surface Browser utilisera ces points de départ pour parcourir l'internet.",
-    "queue_description_without_ai": "Ajoutez un lien web initial (toute adresse internet avec des images) ou mot(s) de recherche d'image. Surface Browser utilisera ces points de départ pour parcourir internet.",
+    "queue_description_with_ai":    "Ajoutez un lien web initial (toute adresse internet contenant des images), des mots-clés de recherche d'image ou une instruction IA pour générer des images. Surface Browser utilisera ces points de départ pour parcourir Internet.",
+    "queue_description_without_ai": "Ajoutez un lien web initial (toute adresse internet avec des images) ou mot(s) de recherche d'image. Surface Browser utilisera ces points de départ pour parcourir Internet.",
     "web_link": "Lien web",
     "search_words": "Mot(s) de recherche",
-    "ai_prompt": "Prompt IA",
+    "ai_prompt": "Instruction IA",
     "queue_link": "Ajouter le Lien",
     "queue_search": "Ajouter la Recherche",
     "queue_ai_prompt": "Ajouter le Prompt IA",
     "refresh_page": "Actualiser la page",
     "no_current_links": "Aucun lien actuel",
     "no_incoming_links": "Aucun lien entrant",
-    "background_text": "Consultez les {joystick_link}instructions du joystick{/link}, le {info_link}contexte{/link} et l'{cat_link}essai du catalogue{/link} (de NESTA, UK) pour plus d'informations.",
+    "background_text": "Consultez les {joystick_link}instructions du joystick{/link}, le {info_link}contexte{/link} et l'{cat_link}essai de catalogue{/link} (de NESTA, UK) pour plus d'informations.",
     "link_targets": {
         "joystick_link": {
             "href": "surfacebrowser_instruction.phtml",
@@ -32,13 +32,13 @@
     "tunnel_instructions": "joystick (avant/arrière): vitesse du tunnel",
     "sphere_title": "Sphère",
     "sphere_instructions": [
-        "joystick: rotation de la sphère",
-        "bouton de tir: sélectionner le lien (les images avec liens apparaissent surlignés avec le tunnel)",
-        "boutons 1/2: zoom avant/arrière de la surface",
-        "bouton latéral: arrêter la rotation"
+        "joystick : rotation de la sphère",
+        "bouton de tir : sélectionner le lien (les images avec liens apparaissent surlignées avec le tunnel)",
+        "boutons 1/2 : zoom avant/arrière sur la surface",
+        "bouton latéral : arrêter la rotation"
     ],
-    "installation_note": "L'œuvre peut être installée sur votre ordinateur : www.boxc.net.",
-    "current_seeds_header": "Points de départ actuelles",
+    "installation_note": "L'œuvre peut être installée sur votre ordinateur depuis www.boxc.net.",
+    "current_seeds_header": "Points de départ actuels",
     "newest_seeds_header": "Nouvelles points de départ entrantes",
     "refresh_link": "Actualiser la page",
     "db_error": "Une erreur s'est produite lors de la récupération des liens. Veuillez réessayer plus tard."
