@@ -43,3 +43,39 @@ td.icon {
     font-weight: bold;
     color: #000;
 }
+
+.side-image {
+    margin: 0 6px 0 4px;
+    padding: 0;
+}
+
+.sb-head {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    background-color: #FFFFFF;
+}
+
+.sb-head h1 {
+    font-size: 24px;
+    margin: 0;
+    display: block;
+}
+
+.sb-head form {
+    border: 1px solid #BBB;
+    border-radius: 5px;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 2px;
+    display: inline-block;
+    min-width: 500px;
+    background-color: #EAF0FF;
+}
+
+.sb-head form label {
+    cursor: pointer;
+}
+
+.sb-head form .addressbar {
+    margin: 12px 0 2px 0;
+}
