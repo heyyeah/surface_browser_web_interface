@@ -2,15 +2,20 @@
 require_once 'config.php';
 require_once 'init.php';
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="<?php echo $_SESSION['lang']; ?>">
 <head>
+  <meta charset="UTF-8">
   <title><?php echo t('page_title'); ?></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <style type="text/css">
     body {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px
     }
+    .side-image {
+        margin: 0 6px 0 4px;
+        padding: 0;
+    }    
   </style>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -18,7 +23,7 @@ require_once 'init.php';
 <body bgcolor="#FFFFFF">
   <?php include 'language_switcher.php'; ?>
   
-  <p><img src="images/SurfaceBrowser_wi1.jpg" width="312" height="194" align="left" border="1" hspace="4">
+  <p><img src="images/SurfaceBrowser_wi1.jpg" width="312" height="194" align="left" border="1" class="side-image">
     <font size="+2"><b><?php echo t('title'); ?></b></font><br>
     <?php echo t('queue_form'); ?>
   </p>
@@ -26,19 +31,21 @@ require_once 'init.php';
   <p><?php echo t('queue_description'); ?></p>
 
   <form action="post.phtml" method="post" target="sb_links" name="form_surfacebrowser">
-    <?php echo t('web_link'); ?> <img src="images/sb_url_f.gif" width="16" height="16">
     <input type="radio" name="type" value="url" checked
       onClick="document.form_surfacebrowser.submit.value='Queue Link'">
-    &nbsp;&nbsp;<?php echo t('search_words'); ?> <img src="images/sb_img_f.gif" width="16" height="16">
+    <img src="images/sb_url_f.gif" width="16" height="16"> <?php echo t('web_link'); ?>
+    &nbsp;&nbsp;
     <input type="radio" name="type" value="img" onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_search'); ?>'">
+    <img src="images/sb_img_f.gif" width="16" height="16"> <?php echo t('search_words'); ?>
     <?php if (SB_ENABLE_AI_SEEDS): ?>
-    &nbsp;&nbsp;<?php echo t('ai_prompt'); ?> <img src="images/sb_ai_f.png" width="16" height="16">
+    &nbsp;&nbsp;
     <input type="radio" name="type" value="ai" onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_ai_prompt'); ?>'">
+    <img src="images/sb_ai_f.png" width="16" height="16"> <?php echo t('ai_prompt'); ?>
     <?php endif; ?>
     <input type="text" name="addressbar" size="30">
     <input type="submit" name="submit" value="<?php echo t('queue_link'); ?>">
   </form>
   
-  <?php echo t_links('background_text'); ?>
+  <p><?php echo t_links('background_text'); ?></p>  
 </body>
 </html>

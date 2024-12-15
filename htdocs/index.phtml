@@ -48,17 +48,17 @@ function getIP()
   <!--<?php echo "Mask: " . "$gallery_ip" . "," . "$local_ip" . " Client: " . "$client_ip" . " => " . "$redir"; ?>-->
 </head>
 
-<frameset rows="203,194,*" framespacing="0" frameborder="no" border="0">
+<frameset rows="208,192,*" framespacing="0" frameborder="no" border="0">
   <frame src="head.phtml" name="sb_head" marginwidth="4" marginheight="5" scrolling="NO" noresize />
-  <frameset cols="326,*" framespacing="0" frameborder="no" border="0">
+  <frameset cols="328,*" framespacing="0" frameborder="no" border="0">
     <frame src="side.html" name="sb_side" marginwidth="4" marginheight="8" scrolling="NO" />
     <frame src="post.phtml" name="sb_links" marginwidth="0" marginheight="8" />
   </frameset>
-  <frame src="surfacebrowser_instruction.phtml" name="sb_content" marginwidth="4" marginheight="2" />
+  <frame src="surfacebrowser_instruction.phtml" name="sb_content" marginwidth="4" marginheight="8" />
 </frameset>
 <noframes>
 
-  <body>
+  <body leftmargin="0" topmargin="0" marginwidth="0" bgcolor="#FFFFFF">
     <p><?php echo t('installation_note'); ?></p>
   </body>
 </noframes>

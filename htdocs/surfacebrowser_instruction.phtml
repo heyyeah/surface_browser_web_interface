@@ -2,21 +2,28 @@
 require_once 'config.php';
 require_once 'init.php';
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="<?php echo $_SESSION['lang']; ?>">
 <head>
-  <title><?php echo t('page_title'); ?></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <style type="text/css">
     body {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px
+      font-size: 13px;
+      margin-top: 0;
+      padding-top: 0;      
+      background-color: #FFFFFF;
+    }
+    .side-image {
+        margin: 0 6px 0 4px;
+        padding: 0;
     }
   </style>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <title><?php echo t('page_title'); ?></title>
 </head>
 
-<body bgcolor="#FFFFFF">
-  <img src="images/SurfaceBrowser_wi3.jpg" width="313" height="174" align="left" border="1" hspace="4">
+<body>
+  <img src="images/SurfaceBrowser_wi3.jpg" width="313" height="174" align="left" border="1" class="side-image">
   <p><b><?php echo t('joystick_title'); ?></b></p>
   <p><b><?php echo t('tunnel_title'); ?></b><br>
     <?php echo t('tunnel_instructions'); ?><br>
