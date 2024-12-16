@@ -34,7 +34,7 @@
     "sphere_instructions": [
         "joystick: rotate sphere",
         "fire: choose selected link (images with links appear highlighted with tunnel)",
-        "button 1/2: zoom up to/away from surface",
+        "buttons 1/2: zoom up to/away from surface",
         "side button: stop rotation"
     ],
     "installation_note": "The work can be installed on your computer from www.boxc.net",
