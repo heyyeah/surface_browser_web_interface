@@ -174,7 +174,7 @@ function getNextLink($db, $data_table)
                     break;
                 case TYPE_AI:
                     // WIP: pass a stub address for AI links
-                    $url = "?type=genai&q=" . urlencode($address);
+                    $url = "surfacebrowser_ai_link.html?q=" . urlencode($address);
                     break;
                 default:
                     $url = sprintf("https://duckduckgo.com/?q=%s&t=h_&iax=images&ia=images&kp=1", urlencode($address));
