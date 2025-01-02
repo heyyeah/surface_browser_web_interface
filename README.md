@@ -34,6 +34,12 @@ Example configurations to make it accessible on:
   - a specific network interface: HOST_IP=192.168.1.100
   - all interfaces: HOST_IP=0.0.0.0
 
+## Keyboard Shortcuts
+
+The interface supports the following keyboard shortcuts:
+
+- **Q + A + Y**: Press these keys simultaneously to clear the current queue of links
+
 ## Stopping the Application
   
   ```bash

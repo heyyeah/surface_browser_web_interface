@@ -49,5 +49,28 @@ require_once 'init.php';
   <?php endif; ?>
 
   <p><?php echo t_links('background_text'); ?></p>  
+
+  <script>
+  let keysPressed = new Set();
+
+  document.addEventListener('keydown', (event) => {
+      keysPressed.add(event.key.toLowerCase());
+      
+      if (keysPressed.has('q') && keysPressed.has('a') && keysPressed.has('y')) {
+          console.log('Clearing queue...');
+          fetch('clear_queue.php')
+              .then(response => response.text())
+              .then(data => {
+                  console.log('Response:', data);
+                  window.parent.frames['sb_links'].location.reload();
+              })
+              .catch(error => console.error('Error:', error));
+      }
+  });
+
+  document.addEventListener('keyup', (event) => {
+      keysPressed.delete(event.key.toLowerCase());
+  });
+  </script>
 </body>
 </html>
