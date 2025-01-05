@@ -34,21 +34,24 @@ try {
         $updateStmt = $db->prepare($updateSql);
         $updateStmt->execute(['id' => $id]);
 
-        // Select appropriate icon based on type
+        // Select appropriate icon and format URL based on type
         switch($type) {
             case TYPE_TEST_URL:
                 $iconImg = "images/sb_url.gif";
+                $url = $address;
                 break;
             case TYPE_TEST_AI:
                 $iconImg = "images/sb_ai.png";
+                $url = "surfacebrowser_ai_link.html?q=" . urlencode($address);
                 break;
             case TYPE_TEST_IMAGE:
                 $iconImg = "images/sb_img.gif";
+                $url = sprintf("https://duckduckgo.com/?q=%s&t=h_&iax=images&ia=images&kp=1", urlencode($address));
                 break;
         }
 
         // Output the link with appropriate icon
-        echo "<a href=\"" . htmlspecialchars($address) . "\"><img src=\"" . $iconImg . "\" alt=\"Link icon\"></a>";
+        echo "<a href=\"" . htmlspecialchars($url) . "\"><img src=\"" . $iconImg . "\" alt=\"Link icon\"></a>";
     } else {
         echo "No test content links available.";
     }
