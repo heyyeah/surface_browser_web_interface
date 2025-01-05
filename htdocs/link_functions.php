@@ -7,7 +7,9 @@ const TYPE_IMAGE = 1;
 // TODO understand if type 2 is used
 const TYPE_AI = 3;
 const TYPE_ACCESSED = 4;
-const TYPE_TEST_CONTENT = 5;
+const TYPE_TEST_URL = 5;
+const TYPE_TEST_IMAGE = 6;
+const TYPE_TEST_AI = 7;
 
 function getOutgoingLinks($db, $data_table)
 {
