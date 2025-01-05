@@ -8,18 +8,23 @@ set_headers();
 $db = connectToDatabase();
 
 try {
-    // Get next test content link
+    // Get next test content link of any test type
     $sql = "SELECT id, type, address FROM " . SB_DATA_TABLE . " 
-            WHERE type = :type_test
+            WHERE type IN (:type_test_url, :type_test_image, :type_test_ai)
             ORDER BY accessed ASC LIMIT 1";
             
     $stmt = $db->prepare($sql);
-    $stmt->execute(['type_test' => TYPE_TEST_CONTENT]);
+    $stmt->execute([
+        'type_test_url' => TYPE_TEST_URL,
+        'type_test_image' => TYPE_TEST_IMAGE,
+        'type_test_ai' => TYPE_TEST_AI
+    ]);
     
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if ($row) {
         $id = $row['id'];
+        $type = $row['type'];
         $address = $row['address'];
 
         // Update the accessed timestamp
@@ -29,8 +34,21 @@ try {
         $updateStmt = $db->prepare($updateSql);
         $updateStmt->execute(['id' => $id]);
 
-        // Output the link with icon
-        echo "<a href=\"" . htmlspecialchars($address) . "\"><img src=\"images/sb_url.gif\" alt=\"Link icon\"></a>";
+        // Select appropriate icon based on type
+        switch($type) {
+            case TYPE_TEST_URL:
+                $iconImg = "images/sb_url.gif";
+                break;
+            case TYPE_TEST_AI:
+                $iconImg = "images/sb_ai.png";
+                break;
+            case TYPE_TEST_IMAGE:
+                $iconImg = "images/sb_img.gif";
+                break;
+        }
+
+        // Output the link with appropriate icon
+        echo "<a href=\"" . htmlspecialchars($address) . "\"><img src=\"" . $iconImg . "\" alt=\"Link icon\"></a>";
     } else {
         echo "No test content links available.";
     }

@@ -42,11 +42,17 @@ The interface supports the following keyboard shortcuts:
 
 ## Test Content Links
 
-A special endpoint `/test_content_link.phtml` is available for testing purposes. This endpoint serves a predefined set of test URLs that are stored in the database with type=5. These test links are kept separate from the regular browsing content and are only accessible through this specific endpoint.
+A special endpoint `/test_content_link.phtml` is available for testing purposes. This endpoint serves predefined test URLs that are stored in the database with the following types:
+
+- TYPE_TEST_URL (5): Basic web URLs
+- TYPE_TEST_IMAGE (6): Image-focused content
+- TYPE_TEST_AI (7): AI-generated or AI-related content
+
+These test links are kept separate from the regular browsing content and are only accessible through this specific endpoint.
 
 To access: [Server path]/test_content_link.phtml
 
-Note: These test links are not accessible through the regular `/link.phtml` endpoint, which continues to serve only browser food content and user-added seeds.
+Note: Test content links are not accessible through the regular `/link.phtml` endpoint, which continues to serve only browser food content and user-added seeds.
 
 ## Stopping the Application
   
