@@ -2,11 +2,12 @@
 require_once 'config.php';
 require_once 'init.php';
 
-const TYPE_ACCESSED = 4;
-const TYPE_AI = 3;
-// TODO understand if type 2 is used
-const TYPE_IMAGE = 1;
 const TYPE_URL = 0;
+const TYPE_IMAGE = 1;
+// TODO understand if type 2 is used
+const TYPE_AI = 3;
+const TYPE_ACCESSED = 4;
+const TYPE_TEST_CONTENT = 5;
 
 function getOutgoingLinks($db, $data_table)
 {
