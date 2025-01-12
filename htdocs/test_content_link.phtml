@@ -25,7 +25,7 @@ try {
     if ($row) {
         $id = $row['id'];
         $type = $row['type'];
-        $address = $row['address'];
+        $address = trim($row['address']);
 
         // Update the accessed timestamp
         $updateSql = "UPDATE " . SB_DATA_TABLE . " 

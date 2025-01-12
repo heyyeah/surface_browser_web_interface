@@ -25,6 +25,8 @@ INSERT INTO zkm (type, accessed, modified, address) VALUES
     (5, NOW(), NOW(), 'https://www.boxc.net'),
     (5, NOW(), NOW(), 'https://boxc.net'),
     (5, NOW(), NOW(), 'https://www.boxc.net/files/zkm/browserfood_tests.html'),
+    (5, NOW(), NOW(), 'https://www.boxc.net/browserfood_INC.html'),
+    (5, NOW(), NOW(), 'https://www.boxc.net/browserfood_INC_i.html'),
     (5, NOW(), NOW(), 'https://www.boxc.net/files/zkm/index.phtml'),
     (5, NOW(), NOW(), 'https://theverge.com'),
     (6, NOW(), NOW(), 'rabbits'),
