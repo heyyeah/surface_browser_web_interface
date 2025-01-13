@@ -18,9 +18,16 @@ function getOutgoingLinks($db, $data_table)
         $rowsNeeded = 2;
 
         // Part 1: Current link (newest accessed after being modified)
-        $sql1 = "SELECT type, accessed, address FROM " . $data_table . " WHERE accessed > modified ORDER BY accessed DESC LIMIT 1";
+        $sql1 = "SELECT type, accessed, address FROM " . $data_table . " 
+                 WHERE accessed > modified 
+                 AND type NOT IN (:type_test_url, :type_test_image, :type_test_ai) 
+                 ORDER BY accessed DESC LIMIT 1";
         $stmt = $db->prepare($sql1);
-        $stmt->execute();
+        $stmt->execute([
+            'type_test_url' => TYPE_TEST_URL,
+            'type_test_image' => TYPE_TEST_IMAGE,
+            'type_test_ai' => TYPE_TEST_AI
+        ]);
 
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
