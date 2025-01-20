@@ -1,3 +1,3 @@
 setTimeout(function () {
     location.reload();
-}, 600000); 
+}, 100 * 1000); 
