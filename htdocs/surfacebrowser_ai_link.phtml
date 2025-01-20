@@ -1,0 +1,15 @@
+<?php
+$queryParam = isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Surface Browser</title>
+</head>
+<body bgcolor="#FFFFFF">
+    <a href="<?php echo (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . str_replace('.phtml', '.html', $_SERVER['REQUEST_URI']); ?>">
+        <img src="images/sb_ai_f.png" alt="AI Gen star">
+    </a>
+</body>
+</html>

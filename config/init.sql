@@ -15,10 +15,15 @@ CREATE TABLE zkm (
 -- Insert default links (type 0)
 INSERT INTO zkm (type, accessed, modified, address) VALUES
     (0, NOW(), NOW(), 'https://www.boxc.net/browserfood.html'),
+    (0, NOW(), NOW(), 'https://www.bbc.com'),
+    (3, NOW(), NOW(), 'browser art'),
+    (0, NOW(), NOW(), 'https://edition.cnn.com'),
+    (0, NOW(), NOW(), 'https://www.theverge.com'),
+    (3, NOW(), NOW(), 'otters'),
     (0, NOW(), NOW(), 'https://www.boxc.net/browserfood2.html'),
+    (0, NOW(), NOW(), 'https://solarsystem.nasa.gov/solar-system/sun/overview/'),
     (0, NOW(), NOW(), 'https://www.boxc.net/browserfood3.html'),
-    (0, NOW(), NOW(), 'https://www.boxc.net/browserfood4.html'),
-    (0, NOW(), NOW(), 'https://www.boxc.net/browserfood5.html');
+    (0, NOW(), NOW(), 'https://www.theartnewspaper.com/keywords/digital-art');
 
 -- Insert test content links (type 5)
 INSERT INTO zkm (type, accessed, modified, address) VALUES
