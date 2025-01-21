@@ -14,32 +14,32 @@ CREATE TABLE zkm (
 
 -- Insert default links (type 0)
 INSERT INTO zkm (type, accessed, modified, address) VALUES
-    (0, NOW() + INTERVAL 1 SECOND, NOW(), 'https://www.boxc.net/browserfood.html'),
-    (0, NOW() + INTERVAL 2 SECOND, NOW(), 'https://www.bbc.com'),
-    (3, NOW() + INTERVAL 3 SECOND, NOW(), 'browser art'),
-    (0, NOW() + INTERVAL 4 SECOND, NOW(), 'https://edition.cnn.com'),
-    (0, NOW() + INTERVAL 5 SECOND, NOW(), 'https://www.theverge.com'),
-    (3, NOW() + INTERVAL 6 SECOND, NOW(), 'otters'),
-    (0, NOW() + INTERVAL 7 SECOND, NOW(), 'https://www.boxc.net/browserfood2.html'),
-    (0, NOW() + INTERVAL 8 SECOND, NOW(), 'https://solarsystem.nasa.gov/solar-system/sun/overview/'),
-    (0, NOW() + INTERVAL 9 SECOND, NOW(), 'https://www.boxc.net/browserfood3.html'),
-    (0, NOW() + INTERVAL 10 SECOND, NOW(), 'https://www.theartnewspaper.com/keywords/digital-art');
+    (0, NOW() + INTERVAL 51 MINUTE, NOW() + INTERVAL 51 MINUTE, 'https://www.boxc.net/browserfood.html'),
+    (0, NOW() + INTERVAL 52 MINUTE, NOW() + INTERVAL 52 MINUTE, 'https://www.bbc.com'),
+    (0, NOW() + INTERVAL 53 MINUTE, NOW() + INTERVAL 53 MINUTE, 'browser art'),
+    (0, NOW() + INTERVAL 54 MINUTE, NOW() + INTERVAL 54 MINUTE, 'https://edition.cnn.com'),
+    (0, NOW() + INTERVAL 55 MINUTE, NOW() + INTERVAL 55 MINUTE, 'https://www.theverge.com'),
+    (0, NOW() + INTERVAL 56 MINUTE, NOW() + INTERVAL 56 MINUTE, 'otters'),
+    (0, NOW() + INTERVAL 57 MINUTE, NOW() + INTERVAL 57 MINUTE, 'https://www.theartnewspaper.com/keywords/digital-art'),
+    (0, NOW() + INTERVAL 58 MINUTE, NOW() + INTERVAL 58 MINUTE, 'https://www.monopol-magazin.de'),
+    (0, NOW() + INTERVAL 59 MINUTE, NOW() + INTERVAL 59 MINUTE, 'https://solarsystem.nasa.gov/solar-system/sun/overview/'),
+    (0, NOW() + INTERVAL 1 HOUR, NOW() + INTERVAL 1 HOUR, 'https://artforum.com');
 
 -- Insert test content links (type 5)
 INSERT INTO zkm (type, accessed, modified, address) VALUES
-    (5, NOW() + INTERVAL 11 SECOND, NOW(), 'https://www.boxc.net'),
-    (5, NOW() + INTERVAL 12 SECOND, NOW(), 'https://boxc.net'),
-    (5, NOW() + INTERVAL 13 SECOND, NOW(), 'https://www.boxc.net/files/zkm/browserfood_tests.html'),
-    (5, NOW() + INTERVAL 14 SECOND, NOW(), 'https://www.boxc.net/browserfood_INC.html'),
-    (5, NOW() + INTERVAL 15 SECOND, NOW(), 'https://www.boxc.net/browserfood_INC_i.html'),
-    (5, NOW() + INTERVAL 16 SECOND, NOW(), 'https://www.boxc.net/files/zkm/index.phtml'),
-    (5, NOW() + INTERVAL 17 SECOND, NOW(), 'https://theverge.com'),
-    (6, NOW() + INTERVAL 18 SECOND, NOW(), 'rabbits'),
-    (5, NOW() + INTERVAL 19 SECOND, NOW(), 'https://cnn.com'),
-    (5, NOW() + INTERVAL 20 SECOND, NOW(), 'https://bbc.com'),
-    (5, NOW() + INTERVAL 21 SECOND, NOW(), 'https://techmeme.com'),
-    (5, NOW() + INTERVAL 22 SECOND, NOW(), 'https://unsplash.com'),
-    (5, NOW() + INTERVAL 23 SECOND, NOW(), 'https://macrumors.com'),
-    (5, NOW() + INTERVAL 24 SECOND, NOW(), 'https://wallup.net/shaun-the-sheep-animation-family-comedy-shaun-sheep-adventure-9/'),
-    (5, NOW() + INTERVAL 25 SECOND, NOW(), 'https://solarsystem.nasa.gov/solar-system/sun/overview/'),
-    (5, NOW() + INTERVAL 26 SECOND, NOW(), 'https://www.amazon.com/dp/B0863TXGM3?tag=theverge02-20&ascsubtag=__vg1223awD__24092021__7om1av');
+    (5, NOW() - INTERVAL 50 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://www.boxc.net'),
+    (5, NOW() - INTERVAL 49 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://boxc.net'),
+    (5, NOW() - INTERVAL 48 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://www.boxc.net/files/zkm/browserfood_tests.html'),
+    (5, NOW() - INTERVAL 47 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://www.boxc.net/browserfood_INC.html'),
+    (5, NOW() - INTERVAL 46 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://www.boxc.net/browserfood_INC_i.html'),
+    (5, NOW() - INTERVAL 45 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://www.boxc.net/files/zkm/index.phtml'),
+    (5, NOW() - INTERVAL 44 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://theverge.com'),
+    (6, NOW() - INTERVAL 43 MINUTE, NOW() - INTERVAL 1 HOUR, 'rabbits'),
+    (5, NOW() - INTERVAL 42 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://cnn.com'),
+    (5, NOW() - INTERVAL 41 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://bbc.com'),
+    (5, NOW() - INTERVAL 40 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://techmeme.com'),
+    (5, NOW() - INTERVAL 39 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://unsplash.com'),
+    (5, NOW() - INTERVAL 38 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://macrumors.com'),
+    (5, NOW() - INTERVAL 37 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://wallup.net/shaun-the-sheep-animation-family-comedy-shaun-sheep-adventure-9/'),
+    (5, NOW() - INTERVAL 36 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://solarsystem.nasa.gov/solar-system/sun/overview/'),
+    (5, NOW() - INTERVAL 35 MINUTE, NOW() - INTERVAL 1 HOUR, 'https://www.amazon.com/dp/B0863TXGM3?tag=theverge02-20&ascsubtag=__vg1223awD__24092021__7om1av');
