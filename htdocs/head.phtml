@@ -43,9 +43,9 @@ require_once 'init.php';
   </form>
 
   <?php if (SB_ENABLE_AI_SEEDS): ?>
-    <p><?php echo t('queue_description_with_ai'); ?></p>
+    <p><?php echo html_entity_decode(t('queue_description_with_ai')); ?></p>
   <?php else: ?>
-    <p><?php echo t('queue_description_without_ai'); ?></p>
+    <p><?php echo html_entity_decode(t('queue_description_without_ai')); ?></p>
   <?php endif; ?>
 
   <p><?php echo t_links('background_text'); ?></p>  

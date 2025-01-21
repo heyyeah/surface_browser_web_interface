@@ -1,8 +1,8 @@
 {
     "title": "Surface Browser",
     "page_title": "Surface Browser :: Tim Plaisted",
-    "queue_description_with_ai":    "Ajoutez un lien web initial (toute adresse internet contenant des images), des mots-clés de recherche d'image ou une instruction IA pour générer des images. Surface Browser utilisera ces points de départ pour parcourir Internet.",
-    "queue_description_without_ai": "Ajoutez un lien web initial (toute adresse internet avec des images) ou mot(s) de recherche d'image. Surface Browser utilisera ces points de départ pour parcourir Internet.",
+    "queue_description_with_ai": "<strong>Lien web :</strong> Saisissez un lien web. <strong>Recherche d'images :</strong> Saisissez un ou plusieurs mots-clés. <strong>Instruction IA :</strong> Saisissez des termes ou une instruction pour générer des images IA.",
+    "queue_description_without_ai": "<strong>Lien web :</strong> Saisissez un lien web. <strong>Recherche d'images :</strong> Saisissez un ou plusieurs mots-clés.",
     "web_link": "Lien web",
     "search_words": "Mot(s) de recherche",
     "ai_prompt": "Instruction IA",
@@ -33,9 +33,10 @@
     "sphere_title": "Sphère",
     "sphere_instructions": [
         "joystick : rotation de la sphère",
-        "bouton de tir : sélectionner le lien (les images avec liens apparaissent surlignées avec le tunnel)",
-        "boutons 1/2 : zoom avant/arrière sur la surface",
-        "bouton latéral : arrêter la rotation"
+        "bouton avant, rouge : ouvrir l'image sélectionnée (lors de la rotation de la sphère, l'image la plus proche du centre apparaîtra en couleur et sera surlignée d'un tunnel si elle possède un lien)",
+        "bouton droit : zoom avant sur la surface",
+        "bouton bas : zoom arrière",
+        "pour arrêter la rotation : déplacez le joystick dans la direction opposée ou appuyez sur le bouton gauche"
     ],
     "installation_note": "L'œuvre peut être installée sur votre ordinateur depuis www.boxc.net.",
     "current_seeds_header": "Points de départ actuels",

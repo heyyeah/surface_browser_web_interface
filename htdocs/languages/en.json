@@ -1,8 +1,8 @@
 {
     "title": "Surface Browser", 
     "page_title": "Surface Browser :: Tim Plaisted",
-    "queue_description_with_ai": "Queue up a web link (any internet address with images), image search word(s) or an AI image prompt. Surface Browser will use these seeds as starting points to traverse the internet.",
-    "queue_description_without_ai": "Queue up a web link (any internet address with images) or image search word(s). Surface Browser will use these as starting points to traverse the internet.",
+    "queue_description_with_ai": "<strong>Web link:</strong> Add a web link to the queue for Surface Browser to open. <strong>Image search:</strong> Enter one or more search terms. <strong>AI image prompt:</strong> Enter terms or instructions to generate AI images.",
+    "queue_description_without_ai": "<strong>Web link:</strong> Add a web link to the queue for Surface Browser to open. <strong>Image search:</strong> Enter one or more search terms.",
     "web_link": "Web link",
     "search_words": "Image search word(s)",
     "ai_prompt": "AI image prompt",
@@ -33,9 +33,10 @@
     "sphere_title": "Sphere",
     "sphere_instructions": [
         "joystick: rotate sphere",
-        "fire: choose selected link (images with links appear highlighted with tunnel)",
-        "buttons 1/2: zoom up to/away from surface",
-        "side button: stop rotation"
+        "front, red button: open selected image (as the sphere rotates, the image closest to the center will appear in colour and will be highlighted with a tunnel if it has a link)",
+        "right button: zoom in to surface",
+        "bottom button: zoom out",
+        "to stop rotation: move the joystick in the opposite direction or press the left button"
     ],
     "installation_note": "The work can be installed on your computer from www.boxc.net",
     "current_seeds_header": "Current seeds",
