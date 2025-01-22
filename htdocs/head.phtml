@@ -20,26 +20,26 @@ require_once 'init.php';
   <form action="post.phtml" method="post" target="sb_links" name="form_surfacebrowser">
     <label>
       <input type="radio" name="type" value="url" checked
-        onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_link'); ?>'">
+        onClick="document.form_surfacebrowser.submitBtn.value='<?php echo t('queue_link'); ?>'">
       <img src="images/sb_url_f.gif" width="16" height="16"> <?php echo t('web_link'); ?>
     </label>
     &nbsp;&nbsp;
     <label>
       <input type="radio" name="type" value="img" 
-        onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_search'); ?>'">
+        onClick="document.form_surfacebrowser.submitBtn.value='<?php echo t('queue_search'); ?>'">
       <img src="images/sb_img_f.gif" width="16" height="16"> <?php echo t('search_words'); ?>
     </label>
     <?php if (SB_ENABLE_AI_SEEDS): ?>
     &nbsp;&nbsp;
     <label>
       <input type="radio" name="type" value="ai" 
-        onClick="document.form_surfacebrowser.submit.value='<?php echo t('queue_ai_prompt'); ?>'">
+        onClick="document.form_surfacebrowser.submitBtn.value='<?php echo t('queue_ai_prompt'); ?>'">
       <img src="images/sb_ai_f.png" width="16" height="16"> <?php echo t('ai_prompt'); ?>
     </label>
     <?php endif; ?>
     <br>
     <input type="text" name="addressbar" class="addressbar" size="45">
-    <input type="submit" name="submit" value="<?php echo t('queue_link'); ?>">
+    <input type="submit" name="submitBtn" id="submitBtn" value="<?php echo t('queue_link'); ?>">
   </form>
 
   <?php if (SB_ENABLE_AI_SEEDS): ?>
@@ -68,6 +68,14 @@ require_once 'init.php';
                   window.parent.frames['sb_links'].location.reload();
               })
               .catch(error => console.error('Error:', error));
+      } else if (keysPressed.has('enter')) {
+        try {
+          const submitBtn = document.getElementById('submitBtn');
+          event.preventDefault();
+          submitBtn.click();
+        } catch (error) {
+          console.error('Error:', error);
+        }
       }
   });
 
