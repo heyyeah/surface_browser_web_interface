@@ -121,7 +121,7 @@ function link_row($type, $link, $isOutLink, $isCurrent)
     $class = $isOutLink ? 'out_links' : 'in_links';
     $class .= $isCurrent ? ' current' : '';
     
-    return "<tr class=\"{$class}\"><td class=\"icon\"><img src=\"images/{$iconImg}\" width=\"12\" height=\"13\" align=\"middle\" vspace=2></td>" .
+    return "<tr class=\"{$class}\"><td class=\"icon\"><img src=\"images/{$iconImg}\" width=\"15\" height=\"16\" align=\"middle\" vspace=2></td>" .
         "<td>" . htmlspecialchars($link) . "</td></tr>\n";
 }
 
