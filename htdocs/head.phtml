@@ -56,7 +56,10 @@ require_once 'init.php';
   document.addEventListener('keydown', (event) => {
       keysPressed.add(event.key.toLowerCase());
       
-      if (keysPressed.has('q') && keysPressed.has('a') && keysPressed.has('y')) {
+      if (keysPressed.size === 3 &&
+        keysPressed.has('q') &&
+        keysPressed.has('a') &&
+        keysPressed.has('y')) {
           console.log('Clearing queue...');
           fetch('clear_queue.php')
               .then(response => response.text())
