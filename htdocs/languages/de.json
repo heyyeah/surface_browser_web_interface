@@ -1,8 +1,8 @@
 {
     "title": "Surface Browser",
     "page_title": "Surface Browser :: Tim Plaisted",
-    "queue_description_with_ai": "<strong>Weblink:</strong> Geben sie einen Weblink ein. <strong>Bildwortsuche:</strong> Geben sie einen oder mehrere Begriffe ein. <strong>KI-Bild-Prompt:</strong> Geben sie Begriffe oder eine Instruktion ein um KI-Bilder zu generieren.",
-    "queue_description_without_ai": "<strong>Weblink:</strong> Geben sie einen Weblink ein. <strong>Bildwortsuche:</strong> Geben sie einen oder mehrere Begriffe ein.",
+    "queue_description_with_ai": "<strong>Weblink:</strong> Fügen Sie einen Weblink hinzu, den Surface Browser öffnen soll. <strong>Bildwortsuche:</strong> Geben Sie einen oder mehrere Begriffe ein. <strong>KI-Bild-Prompt:</strong> Geben Sie Begriffe oder eine Instruktion ein, um KI-Bilder zu generieren.",
+    "queue_description_without_ai": "<strong>Weblink:</strong> Fügen Sie einen Weblink hinzu, den Surface Browser öffnen soll. <strong>Bildwortsuche:</strong> Geben Sie einen oder mehrere Begriffe ein.",
     "web_link": "Weblink",
     "search_words": "Bildsuchwort(e)",
     "ai_prompt": "KI-Bild-Prompt",
