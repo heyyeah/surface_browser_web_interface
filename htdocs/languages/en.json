@@ -33,10 +33,10 @@
     "sphere_title": "Sphere",
     "sphere_instructions": [
         "joystick: rotate sphere",
-        "front, red button: open selected image (as the sphere rotates, the image closest to the center will appear in colour and will be highlighted with a tunnel if it has a link)",
+        "front, fire button: open selected image (as the sphere rotates, the image closest to the center will appear in colour and will be highlighted with a tunnel if it has a link)",
         "right button: zoom in to surface",
-        "bottom button: zoom out",
-        "to stop rotation: move the joystick in the opposite direction or press the left button"
+        "left button: zoom out",
+        "to stop rotation: move the joystick in the opposite direction or press the top (hat) button"
     ],
     "installation_note": "The work can be installed on your computer from www.boxc.net",
     "current_seeds_header": "Current seeds",

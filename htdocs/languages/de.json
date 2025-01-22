@@ -33,10 +33,10 @@
     "sphere_title": "In der Kugel",
     "sphere_instructions": [
         "Joystick: Kugel drehen",
-        "Vorderer, roter Knopf: Ausgewähltes Bild öffnen (Bilder mit Links werden mit Tunnel hervorgehoben)",
+        "Vorderer Feuerknopf: Ausgewähltes Bild öffnen (Bilder mit Links werden mit Tunnel hervorgehoben)",
         "Rechter Knopf: Zur Oberfläche hineinzoomen",
-        "Unterer Knopf: Herauszoomen",
-        "Um die Rotation zu stoppen: Bewegen des Joysticks in die entgegengesetzte Richtung oder durch Drücken des linken Knopfs"
+        "Linker Knopf: Herauszoomen",
+        "Rotation stoppen: Bewegen Sie den Joystick in die entgegengesetzte Richtung oder drücken Sie den oberen (Hut-) Knopf"
     ],
     "installation_note": "Das Werk kann auf Ihrem Computer installiert werden: www.boxc.net.",
     "current_seeds_header": "Aktuelle Startpunkte",
