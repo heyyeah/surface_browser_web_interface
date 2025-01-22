@@ -96,9 +96,9 @@ td.icon {
     margin: 12px 0 2px 0;
 }
 
-.dupeLink {
+.warning {
     font-weight: 300;
     padding: 10px;
-    background: rgb(214, 194, 194);
+    background: rgb(224, 186, 186);
     border-radius: 5px;
 }

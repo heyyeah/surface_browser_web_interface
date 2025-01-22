@@ -104,7 +104,7 @@ try {
             // log result
             error_log("Result: " . $stmt->rowCount());
             if ($stmt->rowCount() > 0) {
-                $message = '<p class="dupeLink">' . str_replace('{{address}}', htmlspecialchars($address), t('link_already_queued')) . '</strong></p>';
+                $message = '<p class="warning">' . str_replace('{{address}}', htmlspecialchars($address), t('link_already_queued')) . '</strong></p>';
             } else {
                 $stmt = $db->prepare("SELECT COUNT(*) FROM " . SB_DATA_TABLE);
                 $stmt->execute();
@@ -122,8 +122,7 @@ try {
                 }
             }
         } else {
-            // echo "No link found " . htmlspecialchars($error);
-            $message = "No link found " . htmlspecialchars($error);
+            $message = '<p class="warning">' . str_replace('{{error}}', htmlspecialchars($error), t('no_link_found')) . '</p>';
         }
     }
 } catch (PDOException $e) {

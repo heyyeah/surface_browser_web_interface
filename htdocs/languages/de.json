@@ -43,5 +43,6 @@
     "newest_seeds_header": "Neueste eingehende Startpunkte",
     "refresh_link": "Seite aktualisieren",
     "db_error": "Beim Abrufen der Links ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
-    "link_already_queued": "\"{{address}}\" ist bereits in der Warteschlange."
+    "link_already_queued": "\"{{address}}\" ist bereits in der Warteschlange.",
+    "no_link_found": "Kein Link gefunden {{error}}"
 }
