@@ -95,3 +95,10 @@ td.icon {
 .sb-head form .addressbar {
     margin: 12px 0 2px 0;
 }
+
+.dupeLink {
+    font-weight: 300;
+    padding: 10px;
+    background: rgb(214, 194, 194);
+    border-radius: 5px;
+}

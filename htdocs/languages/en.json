@@ -42,5 +42,6 @@
     "current_seeds_header": "Current seeds",
     "newest_seeds_header": "Newest Incoming seeds",
     "refresh_link": "Refresh page",
-    "db_error": "An error occurred while retrieving links. Please try again later."
+    "db_error": "An error occurred while retrieving links. Please try again later.",
+    "link_already_queued": "\"{{address}}\" is already in the queue."
   }

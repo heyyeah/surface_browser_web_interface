@@ -104,7 +104,7 @@ try {
             // log result
             error_log("Result: " . $stmt->rowCount());
             if ($stmt->rowCount() > 0) {
-                $message = "Link \"" . htmlspecialchars($address) . "\" is already in queue.";
+                $message = '<p class="dupeLink">' . str_replace('{{address}}', htmlspecialchars($address), t('link_already_queued')) . '</strong></p>';
             } else {
                 $stmt = $db->prepare("SELECT COUNT(*) FROM " . SB_DATA_TABLE);
                 $stmt->execute();

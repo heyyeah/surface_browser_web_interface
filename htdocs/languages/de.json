@@ -42,5 +42,6 @@
     "current_seeds_header": "Aktuelle Startpunkte",
     "newest_seeds_header": "Neueste eingehende Startpunkte",
     "refresh_link": "Seite aktualisieren",
-    "db_error": "Beim Abrufen der Links ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+    "db_error": "Beim Abrufen der Links ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "link_already_queued": "\"{{address}}\" ist bereits in der Warteschlange."
 }

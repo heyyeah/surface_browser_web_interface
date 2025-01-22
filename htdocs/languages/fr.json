@@ -42,5 +42,6 @@
     "current_seeds_header": "Points de départ actuels",
     "newest_seeds_header": "Nouveaux points de départ entrants",
     "refresh_link": "Actualiser la page",
-    "db_error": "Une erreur s'est produite lors de la récupération des liens. Veuillez réessayer plus tard."
+    "db_error": "Une erreur s'est produite lors de la récupération des liens. Veuillez réessayer plus tard.",
+    "link_already_queued": "\"{{address}}\" est déjà dans la file d'attente."
 }
