@@ -14,7 +14,7 @@ CREATE TABLE zkm (
 
 -- Insert default links (type 0)
 INSERT INTO zkm (type, accessed, modified, address) VALUES
-    (0, NOW() + INTERVAL 51 MINUTE, NOW() + INTERVAL 51 MINUTE, 'https://www.boxc.net/browserfood.html'),
+    (0, NOW() + INTERVAL 51 MINUTE, NOW() + INTERVAL 51 MINUTE, 'browserfood.html'),
     (0, NOW() + INTERVAL 52 MINUTE, NOW() + INTERVAL 52 MINUTE, 'https://www.bbc.com'),
     (0, NOW() + INTERVAL 53 MINUTE, NOW() + INTERVAL 53 MINUTE, 'browser art'),
     (0, NOW() + INTERVAL 54 MINUTE, NOW() + INTERVAL 54 MINUTE, 'https://edition.cnn.com'),
