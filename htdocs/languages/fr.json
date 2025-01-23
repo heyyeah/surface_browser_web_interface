@@ -34,7 +34,7 @@
     "sphere_instructions": [
         "joystick : rotation de la sphère",
         "bouton avant de tir : ouvrir l'image sélectionnée (lors de la rotation de la sphère, l'image la plus proche du centre apparaîtra en couleur et sera surlignée d'un tunnel si elle possède un lien)",
-        "bouton droit : zoom avant sur la surface",
+        "bouton droit : zoom avant sur la \"surface\" des images",
         "bouton gauche : zoom arrière",
         "pour arrêter la rotation : déplacez le joystick dans la direction opposée ou appuyez sur le bouton supérieur (chapeau)"
     ],

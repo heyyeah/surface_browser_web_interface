@@ -34,7 +34,7 @@
     "sphere_instructions": [
         "joystick: rotate sphere",
         "front, fire button: open selected image (as the sphere rotates, the image closest to the center will appear in colour and will be highlighted with a tunnel if it has a link)",
-        "right button: zoom in to surface",
+        "right button: zoom in to the \"surface\" of the images",
         "left button: zoom out",
         "to stop rotation: move the joystick in the opposite direction or press the top (hat) button"
     ],

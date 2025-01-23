@@ -34,7 +34,7 @@
     "sphere_instructions": [
         "Joystick: Kugel drehen",
         "Vorderer Feuerknopf: Ausgewähltes Bild öffnen (Bilder mit Links werden mit Tunnel hervorgehoben)",
-        "Rechter Knopf: Zur Oberfläche hineinzoomen",
+        "Rechter Knopf: Zur Oberfläche (\"Surface\") der Bilder hineinzoomen",
         "Linker Knopf: Herauszoomen",
         "Rotation stoppen: Bewegen Sie den Joystick in die entgegengesetzte Richtung oder drücken Sie den oberen (Hut-) Knopf"
     ],
