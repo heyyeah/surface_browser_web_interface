@@ -16,10 +16,10 @@ CREATE TABLE zkm (
 INSERT INTO zkm (type, accessed, modified, address) VALUES
     (0, NOW() + INTERVAL 51 MINUTE, NOW() + INTERVAL 51 MINUTE, 'browserfood.html'),
     (0, NOW() + INTERVAL 52 MINUTE, NOW() + INTERVAL 52 MINUTE, 'https://www.bbc.com'),
-    (0, NOW() + INTERVAL 53 MINUTE, NOW() + INTERVAL 53 MINUTE, 'browser art'),
+    (1, NOW() + INTERVAL 53 MINUTE, NOW() + INTERVAL 53 MINUTE, 'browser art'),
     (0, NOW() + INTERVAL 54 MINUTE, NOW() + INTERVAL 54 MINUTE, 'https://edition.cnn.com'),
     (0, NOW() + INTERVAL 55 MINUTE, NOW() + INTERVAL 55 MINUTE, 'https://www.theverge.com'),
-    (0, NOW() + INTERVAL 56 MINUTE, NOW() + INTERVAL 56 MINUTE, 'otters'),
+    (1, NOW() + INTERVAL 56 MINUTE, NOW() + INTERVAL 56 MINUTE, 'otters'),
     (0, NOW() + INTERVAL 57 MINUTE, NOW() + INTERVAL 57 MINUTE, 'https://www.theartnewspaper.com/keywords/digital-art'),
     (0, NOW() + INTERVAL 58 MINUTE, NOW() + INTERVAL 58 MINUTE, 'https://www.monopol-magazin.de'),
     (0, NOW() + INTERVAL 59 MINUTE, NOW() + INTERVAL 59 MINUTE, 'https://solarsystem.nasa.gov/solar-system/sun/overview/'),
